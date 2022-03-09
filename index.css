@@ -1,0 +1,36 @@
+body {
+    background-color: #929fd9;
+}
+
+#toimiala {
+    position: absolute;
+}
+
+#kunta {
+    position: absolute;
+}
+
+.kuntaDiv, .toimialaDiv {
+   
+    float: left;
+    width: 70%;
+    margin-top: 4px;
+}
+
+.toimi {
+ margin-left: 30px;
+}
+
+.kunnat {
+ margin-left: 30px;
+}
+
+button {
+    background-color: #EE82EE;
+    border: black;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5%;
+    font-size: 20px;
+
+}
