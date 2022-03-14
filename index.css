@@ -3,6 +3,10 @@ body {
     background-color: #929fd9;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
 #toimiala {
     /*position: absolute;*/
     font-family: "Lucida Console" ;
@@ -20,6 +24,7 @@ body {
     float: left;
     width: 70%;
     margin-top: 4px;
+    margin-left: 100px;
     
 }
 
@@ -40,14 +45,15 @@ body {
 
 button {
     position: absolute;
-    left: 40px;
-    top: 80px;
+    left: 160px;
+    top: 100px;
     background-color: #EE82EE;
     border: black;
     border-style: solid;
     border-width: 2px;
     border-radius: 3%;
-    font-size: 20px;
+    font-size: 14px;
+    padding: 5px 5px 5px 5px;
 }
 
 table, th, td {
@@ -57,9 +63,13 @@ table, th, td {
     background-color: white;
 }
 
+th {
+    background-color: rgb(212, 209, 209);
+}
+
 .taulu {
     position: absolute;
-    top: 140px;
+    top: 160px;
     left: 0px;
     text-align: center;
 }
