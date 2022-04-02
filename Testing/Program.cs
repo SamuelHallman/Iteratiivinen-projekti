@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +12,9 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            string koulutus = @".\Koulutus.txt";
+            string koulutus = @"..\..\..\koulutus.txt";
 
-            
+
             if (File.Exists(koulutus))
             {
                 string ensimmäinenYritys = File.ReadAllText(koulutus);
@@ -27,7 +27,7 @@ namespace Testing
                     Console.WriteLine(tiedot[i].Substring(paikka2 + 1, tiedot[i].Length - paikka2 - 1));
                     Console.WriteLine();
                 }
-                //Console.Write(File.ReadAllText(koulutus));
+                Console.Write(File.ReadAllText(koulutus));
                 Console.ReadLine();
             }
 
@@ -49,7 +49,6 @@ namespace Testing
                 Console.ReadLine();
             }*/
             /*int i = 0;
-
             while (i < 10)
             {
                 int paikka1 = ensimmäinenYritys.IndexOf("name");
@@ -58,8 +57,6 @@ namespace Testing
                 Console.WriteLine(yritysNimi);
                 i++;
             }
-
-
             
             //Console.WriteLine(File.ReadAllText(koulutus));
             Console.ReadLine();*/
