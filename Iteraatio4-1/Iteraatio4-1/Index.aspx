@@ -67,6 +67,9 @@ Response.Write(responseFromServer);*/
       </div>
       </form>
         <%
+            string kunta = "Lahti";
+            string toimiala = "80";
+
             StringWriter writer = new StringWriter();
             WebRequest myRequest = WebRequest.Create(@"https://avoindata.prh.fi/bis/v1?totalResults=false&maxResults=10&resultsFrom=0&registeredOffice=" + kunta + "&businessLineCode=" + toimiala + "&companyRegistrationFrom=2014-02-28");
             WebResponse response = myRequest.GetResponse();
