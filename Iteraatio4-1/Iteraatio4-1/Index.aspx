@@ -41,16 +41,12 @@ Response.Write(responseFromServer);*/
                 <select id="toimi" name="toimi" class="toimi" value="<%=Convert.ToDouble(Request.Form["toimi"])%>">
                   <!--toimialan IDt-->
                   <option value="0">Valitse</option>
-                  <option value="100">86 Terveyspalvelut</option>
-                  <option value="200">Koodaus</option>
-                  <option value="300">Liikunta</option>
-                  <option value="400">Siivous</option>
-                  <option value="500">Myynti</option>
-                  <option value="600">Lääkintä</option>
-                  <option value="700">Viihde</option>
-                  <option value="800">Majotus</option>
-                  <option value="900">Metalli</option>
-                  <option value="1000">Kauppa</option>
+                  <option value="100">80 Koulutus</option>
+                  <option value="200">85 Terveydenhuolto-ja sosiaalipalvelut</option>
+                  <option value="300">70 Kiinteistöalan palvelut</option>
+                  <option value="400">40 Rakentaminen</option>
+                  <option value="500">55 Majoitus- ja ravitsemistoiminta</option>
+               
                 </select>
             
       </div>
@@ -60,16 +56,12 @@ Response.Write(responseFromServer);*/
                  <!--kunnan IDt-->
           <select id="kunnat" name="kunnat" class="kunnat" value="<% =Convert.ToDouble(Request.Form["kunnat"])%>">
               <option value="0">Valitse</option>
-                    <option value="1">Kouvola</option>
+                    <option value="1">Oulu</option>
                     <option value="2">Lahti</option>
                     <option value="3">Helsinki</option>
-                    <option value="4">Oulu</option>
+                    <option value="4">Tampere</option>
                     <option value="5">Turku</option>
-                    <option value="6">Rovaniemi</option>
-                    <option value="7">Lappeenranta</option>
-                    <option value="8">Espoo</option>
-                    <option value="9">Porvo</option>
-                    <option value="10">Hämeenlinna</option>
+               
           </select>
           <button type="submit">HAE TIEDOT</button>
       </div>
