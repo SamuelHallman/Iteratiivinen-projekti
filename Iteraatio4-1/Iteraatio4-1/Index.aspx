@@ -3,20 +3,6 @@
 <!DOCTYPE html>
 <%@ Import Namespace="System.IO" %>
 <%@ Import Namespace="System.Net"%>
-<%
-/*StringWriter writer = new StringWriter();
-WebRequest myRequest = WebRequest.Create(@"https://avoindata.prh.fi/bis/v1?totalResults=false&maxResults=100&resultsFrom=0&registeredOffice=Lahti&businessLineCode=86&companyRegistrationFrom=2014-02-28");
-WebResponse response = myRequest.GetResponse();
-// Get the stream containing content returned by the server.
-Stream dataStream = response.GetResponseStream();
-// Open the stream using a StreamReader for easy access.
-StreamReader reader = new StreamReader(dataStream);
-// Read the content.
-string responseFromServer = reader.ReadToEnd();
-//Now this string includes all data from the external web site for further use
-Response.Write(responseFromServer);*/
-    
-%>
 
 <% 
 
