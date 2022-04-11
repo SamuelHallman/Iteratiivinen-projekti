@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm.aspx.cs" Inherits="index.WebForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="index.WebForm1" %>
+
+
 
 <!DOCTYPE html>
 <%@ Import Namespace="System.IO" %>
@@ -13,7 +15,7 @@
                   <title> Document </title>
               </head >
   <body>
-      <form id="form1" runat="server" method="post" action="WebForm.aspx">
+      <form id="form2" runat="server" method="post" action="WebForm1.aspx">
       <div class="toimialaDiv">
          
           <label id="toimiala" for="SelectToimiala">TOIMIALA</label>
