@@ -23,7 +23,7 @@
       <div class="toimialaDiv">
          
           <label id="toimiala" for="SelectToimiala">TOIMIALA</label>
-                <select id="toimi" name="toimi" class="toimi" value="<%=Convert.ToDouble(Request.Form["toimi"])%>">
+                <select id="toimi" name="toimi" class="toimi" value="<%=Convert.ToString(Request.Form["toimi"])%>">
                   <!--toimialan IDt-->
                   <option value="0">Valitse</option>
                   <option value="85">85 Koulutus</option>
@@ -37,8 +37,8 @@
       <div class="kuntaDiv">
           <label id="kunta" for="SelectKunta">KUNTA</label>
                  <!--kunnan IDt-->
-          <select id="kunnat" name="kunnat" class="kunnat" value="<% =Convert.ToDouble(Request.Form["kunnat"])%>">
-              <option value="0">Valitse</option>
+          <select id="kunnat" name="kunnat" class="kunnat" value="<% =Convert.ToString(Request.Form["kunnat"])%>">
+              <option value="Valitse">Valitse</option>
                     <option value="Oulu">Oulu</option>
                     <option value="Lahti">Lahti</option>
                     <option value="Helsinki">Helsinki</option>
@@ -53,45 +53,147 @@
             string paikkakunta = Convert.ToString(Request.Form["kunnat"]);
 
             StringWriter writer = new StringWriter();
-            WebRequest myRequest = WebRequest.Create(@"https://avoindata.prh.fi/bis/v1?totalResults=false&maxResults=10&resultsFrom=0&registeredOffice="+ paikkakunta +"&businessLineCode="+ toimialaKoodi +"&companyRegistrationFrom=2014-02-28");
+            WebRequest myRequest = WebRequest.Create(@"https://avoindata.prh.fi/bis/v1?totalResults=false&maxResults=10&resultsFrom=0&registeredOffice=" + paikkakunta + "&businessLineCode=" + toimialaKoodi + "&companyRegistrationFrom=2014-02-28");
 
             WebResponse response = myRequest.GetResponse();
             Stream dataStream = response.GetResponseStream();
             StreamReader reader = new StreamReader(dataStream);
             string responseFromServer = reader.ReadToEnd();
+
             string[] tiedot = responseFromServer.Split('{');
             for (int i = 2; i < tiedot.Length; i++)
             {
                 int nimi = tiedot[i].IndexOf("name");
-                Response.Write(tiedot[i].Substring(nimi + 7, tiedot[i].Length - nimi - 126));
+                int data = tiedot[i].IndexOf("registrationDate");
+                Console.WriteLine(tiedot[i].Substring(nimi + 7, data - 36));
             }
 
+            string[] businessId = responseFromServer.Split('{');
+            for (int i = 2; i < tiedot.Length; i++)
+            {
+                int nimi = businessId[i].IndexOf("Id");
+                int name = businessId[i].LastIndexOf("name");
+                Console.WriteLine(businessId[i].Substring(nimi + 5, name - 17));
+            }
+            int nimet = tiedot[2 + 3].IndexOf("name");
+            int päivä = tiedot[2].IndexOf("registrationDate");
+            
           %>
+
       <div class="taulu">
       <table>
           <tr>
             <th>Y-TUNNUS</th>
             <th>YRITYS</th>
           </tr>
-          <tr>
+        <tr>
             <td>
                 <%
-
+                    Response.Write(tiedot[2]);
             %>
             </td>
             <td>
                 <%
-                    Response.Write(tiedot[2].Substring(33, 19));  
+                    Response.Write(tiedot[2]);
             %>
             </td>
           </tr>
         <tr>
-            <%
-                    Response.Write(tiedot[3].Substring(33, 19));  
-            %>
             <td>
+                <%
+                    Response.Write(tiedot[3]);
+            %>
+            </td>
+            <td>
+                <%
+                    Response.Write(tiedot[3]);
+            %>
             </td>
         </tr>
+          <tr>
+            <td>
+                <%
+                    Response.Write(tiedot[4]);
+            %>
+            </td>
+            <td>
+                <%
+                    Response.Write(tiedot[4]);
+            %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <%
+                    Response.Write(tiedot[5]);
+            %>
+            </td>
+            <td>
+                <%
+                    Response.Write(tiedot[5]);
+            %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <%
+                    Response.Write(tiedot[6]);
+            %>
+            </td>
+            <td>
+                <%
+                    Response.Write(tiedot[6]);
+            %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <%
+                    Response.Write(tiedot[7]);
+            %>
+            </td>
+            <td>
+                <%
+                    Response.Write(tiedot[7]);
+            %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <%
+                    Response.Write(tiedot[8]);
+            %>
+            </td>
+            <td>
+                <%
+                    Response.Write(tiedot[8]);
+            %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <%
+                    Response.Write(tiedot[9]);
+            %>
+            </td>
+            <td>
+                <%
+                    Response.Write(tiedot[9]);
+            %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <%
+                    Response.Write(tiedot[10]);
+            %>
+            </td>
+            <td>
+                <%
+                    Response.Write(tiedot[10]);
+            %>
+            </td>
+          </tr>
         </table>
     </div>
   </body>
